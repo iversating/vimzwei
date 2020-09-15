@@ -560,6 +560,7 @@ wp theme install neve --path="\$PTH" --allow-root
 wp theme delete twentytwenty --path="\$PTH" --allow-root
 wp theme delete twentyseventeen --path="\$PTH" --allow-root
 wp theme delete twentynineteen --path="\$PTH" --allow-root
+wp post delete 1 --path="\$PTH" --allow-root
 wp post delete \$(wp post list --post_type='page' --format=ids --path="\$PTH" --allow-root --force) --path="\$PTH" --allow-root --force
 wp post create --post_type=page --post_title='Política de Privacidad' --post_status=future --path="\$PTH" --allow-root
 wp post create --post_type=page --post_title='Política de Cookies' --post_status=future --path="\$PTH" --allow-root
