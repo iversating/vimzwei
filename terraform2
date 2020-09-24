@@ -83,7 +83,7 @@ resource "cloudflare_record" "mx3" {
   ttl      = 1
   priority = 50
 }
-resource "cloudflare_record" "mx3" {
+resource "cloudflare_record" "mxadmin" {
   zone_id  = cloudflare_zone.zone.id
   name     = "admin"
   value    = "feedback-smtp.us-east-1.amazonses.com"
@@ -91,7 +91,7 @@ resource "cloudflare_record" "mx3" {
   ttl      = 1
   priority = 10
 }
-resource "cloudflare_record" "mx3" {
+resource "cloudflare_record" "mxses" {
   zone_id  = cloudflare_zone.zone.id
   name     = "ses"
   value    = "feedback-smtp.us-east-1.amazonses.com"
