@@ -412,7 +412,6 @@ echo "===========      !  I N I C I A N D O    C R E A C I Ó N    W O R D P R E
 echo "===========                                                                           ==========="
 echo "================================================================================================="
 echo -e "22\ny\n\$DOMINIO\ny\ny\n4\nn\ny\ny\nn\nn\nn\ny\ny\n\$WPUSER\n\$WPPASS\n\$EMAIL\n1\nn\ny\n24\ny\n24" | centmin
-sh /root/"\$DOMINIO"/downwp.sh
 sh /root/"\$DOMINIO"/ssllabs.sh
 sh /root/"\$DOMINIO"/bk-local.sh
 sh /root/"\$DOMINIO"/rds.sh
@@ -428,6 +427,7 @@ echo "===========             !  C O N F I G U R A N D O   W O R D P R E S S  ! 
 echo "===========                                                                           ==========="
 echo "================================================================================================="
 sh /root/"\$DOMINIO"/wordpress.sh
+sh /root/"\$DOMINIO"/downwp.sh
 sh /root/"\$DOMINIO"/configwp.sh
 sh /root/"\$DOMINIO"/permisos.sh
 echo "Creando Copia de Seguridad"
