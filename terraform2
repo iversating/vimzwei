@@ -83,6 +83,36 @@ resource "cloudflare_record" "mx3" {
   ttl      = 1
   priority = 50
 }
+resource "cloudflare_record" "mx3" {
+  zone_id  = cloudflare_zone.zone.id
+  name     = "admin"
+  value    = "feedback-smtp.us-east-1.amazonses.com"
+  type     = "MX"
+  ttl      = 1
+  priority = 10
+}
+resource "cloudflare_record" "mx3" {
+  zone_id  = cloudflare_zone.zone.id
+  name     = "ses"
+  value    = "feedback-smtp.us-east-1.amazonses.com"
+  type     = "MX"
+  ttl      = 1
+  priority = 10
+}
+resource "cloudflare_record" "ses1" {
+  zone_id  = cloudflare_zone.zone.id
+  name     = "ses"
+  value    = "v=spf1 include:amazonses.com ~all"
+  type     = "TXT"
+  ttl      = 1
+}
+resource "cloudflare_record" "ses2" {
+  zone_id  = cloudflare_zone.zone.id
+  name     = "admin"
+  value    = "v=spf1 include:amazonses.com ~all"
+  type     = "TXT"
+  ttl      = 1
+}
 resource "cloudflare_record" "spf" {
   zone_id  = cloudflare_zone.zone.id
   name     = "@"
