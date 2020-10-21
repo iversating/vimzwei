@@ -489,6 +489,7 @@ cat <<EOF >> $MYDOMAIN/.sh/downwp.sh
 DOMINIO=$MYDOMAIN
 PTH="/home/nginx/domains/"\$DOMINIO"/public/"
 wp core update --version=5.4.2 --force --path="\$PTH" --allow-root
+wp core update-db --path="\$PTH" --allow-root
 EOF
 
 cat <<EOF >> $MYDOMAIN/.sh/ssllabs.sh
@@ -578,13 +579,15 @@ wp plugin install astra-sites --activate --path="\$PTH" --allow-root
 wp plugin install envato-elements --activate --path="\$PTH" --allow-root
 wp plugin install https://github.com/iversating/vim2.0/raw/master/plgwp/wp-fusion.zip --activate --path="\$PTH" --allow-root
 wp plugin install https://github.com/iversating/vim2.0/raw/master/plgwp/cartflows.zip --activate --path="\$PTH" --allow-root
-wp plugin install https://github.com/iversating/vim2.0/raw/master/plgwp/cartflows-pro.zip --activate --path="\$PTH" --allow-root
+wp plugin install https://github.com/iversating/vim2.0/raw/master/plgwp/cartflows-pro.zip --path="\$PTH" --allow-root
 wp plugin install https://github.com/iversating/vim2.0/raw/master/plgwp/updraftplus-premium.zip --activate --path="\$PTH" --allow-root
 wp plugin install contact-form-7 --activate --path="\$PTH" --allow-root
+wp plugin install classic-editor --activate --path="\$PTH" --allow-root
 wp plugin install wpcf7-redirect --activate --path="\$PTH" --allow-root
 wp plugin install adapta-rgpd --activate --path="\$PTH" --allow-root
 wp plugin install search-engine-insights --activate --path="\$PTH" --allow-root
 wp plugin install seo-by-rank-math --activate --path="\$PTH" --allow-root
+wp plugin install google-site-kit --activate --path="\$PTH" --allow-root
 wp plugin install code-snippets --activate --path="\$PTH" --allow-root
 wp plugin install aws-cdn-by-wpadmin --activate --path="\$PTH" --allow-root
 wp plugin install wp-ses --activate --path="\$PTH" --allow-root
@@ -597,14 +600,14 @@ wp plugin install commonwp --activate --path="\$PTH" --allow-root
 wp plugin install wp-whatsapp --activate --path="\$PTH" --allow-root
 wp plugin install woocommerce --activate --path="\$PTH" --allow-root
 wp plugin install departamentos-y-ciudades-de-colombia-para-woocommerce --activate --path="\$PTH" --allow-root
-wp plugin install https://github.com/iversating/vim2.0/raw/master/plgwp/google-ads-for-woocommerce.zip --activate --path="\$PTH" --allow-root
+wp plugin install https://github.com/iversating/vim2.0/raw/master/plgwp/google-ads-for-woocommerce.zip --path="\$PTH" --allow-root
 wp plugin install https://github.com/epayco/Plugin_ePayco_WooCommerce/releases/download/V4.0.x/Plugin_ePayco_WooCommerce_4.0.x.zip --activate --path="\$PTH" --allow-root
 wp plugin install https://github.com/vlipco/woocommerce-wompi-plugin/releases/download/0.1.0/Wompi_WooCommerce_Plugin_0.1.0.zip --path="\$PTH" --allow-root
 wp plugin install groundhogg --activate --path="\$PTH" --allow-root
-wp post delete 7 --path="\$PTH" --allow-root --force
-wp post delete 8 --path="\$PTH" --allow-root --force
-wp post delete 9 --path="\$PTH" --allow-root --force
-wp post delete 10 --path="\$PTH" --allow-root --force
+#wp post delete 7 --path="\$PTH" --allow-root --force
+#wp post delete 8 --path="\$PTH" --allow-root --force
+#wp post delete 9 --path="\$PTH" --allow-root --force
+#wp post delete 10 --path="\$PTH" --allow-root --force
 wp rewrite structure '/%postname%/' --path="\$PTH" --allow-root
 wp option update blogdescription '' --path="\$PTH" --allow-root
 wp option update posts_per_page 04 --path="\$PTH" --allow-root
